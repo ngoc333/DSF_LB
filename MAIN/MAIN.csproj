@@ -51,9 +51,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\COM.dll</HintPath>
     </Reference>
-    <Reference Include="ComVar">
-      <HintPath>..\ComVar\bin\Debug\ComVar.dll</HintPath>
-    </Reference>
     <Reference Include="DevExpress.Charts.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\DevExpress.Charts.v17.1.Core.dll</HintPath>
@@ -190,6 +187,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="emd_Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ComVar\ComVar.csproj">
+      <Project>{1fdd4c55-6914-47c9-89f0-682d023ac3a9}</Project>
+      <Name>ComVar</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
