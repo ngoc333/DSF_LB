@@ -20,7 +20,9 @@ namespace FORM.UC
             bsVQuality.Selected = true;
             _lineCD = line;
             _MlineCD = mline;
-            this.Name = "UC_MENU_NOSN_" + mline; 
+            this.Name = "UC_MENU_NOSN_" + mline;
+            picLine.Name += mline;
+            lblLine.Name += mline;
         }
         #region Variable
         string _MenuName = "";
@@ -178,53 +180,53 @@ namespace FORM.UC
                     switch (this.Name)
                     {
                         case "UC_MENU_NOSN_000":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\nodata.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "No Name";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\nodata.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "No Name";
                             //dgModel.Text = new string('b', dgModel.DigitCount);
                             //visibleSymbolsCount = dgModel.DigitCount;
                             //substringStartIndex = 0;
                             break;
                         case "UC_MENU_NOSN_002":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N2.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Nương";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N2.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Nương";
                             // dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_003":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N3.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Yến";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N3.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Yến";
                             // dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_004":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N6.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Trúc";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N6.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Trúc";
                             // dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_005":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N5.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Thanh";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N5.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Thanh";
                             //  dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_006":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N4.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Hồng";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N4.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Hồng";
                             //  dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_007":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N7.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Hạnh";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N7.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Hạnh";
                             //  dgModel.Text = "123456";
                             break;
                         case "UC_MENU_NOSN_008":
-                            picture.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N8.png");
-                            picture.BackgroundImageLayout = ImageLayout.Stretch;
-                            lb_Name.Text = "Lan";
+                            picLine.BackgroundImage = Image.FromFile(Application.StartupPath + @"\img\img_NOS_N_N8.png");
+                            picLine.BackgroundImageLayout = ImageLayout.Stretch;
+                            lblLine.Text = "Lan";
                             //  dgModel.Text = "123456";
                             break;
                     }

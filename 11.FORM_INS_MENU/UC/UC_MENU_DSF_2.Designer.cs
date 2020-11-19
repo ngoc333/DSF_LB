@@ -62,8 +62,8 @@
             this.dgModel = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.lbl_Line = new System.Windows.Forms.Label();
-            this.picture = new System.Windows.Forms.PictureBox();
-            this.lb_Name = new System.Windows.Forms.Label();
+            this.picLine = new System.Windows.Forms.PictureBox();
+            this.lblLine = new System.Windows.Forms.Label();
             this.grpProd = new FORM.GroupBoxEx();
             this.axfpSpread1 = new AxFPUSpreadADO.AxfpSpread();
             ((System.ComponentModel.ISupportInitialize)(this.bsView)).BeginInit();
@@ -76,7 +76,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgModel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
             this.grpProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axfpSpread1)).BeginInit();
             this.SuspendLayout();
@@ -859,24 +859,24 @@
             this.lbl_Line.Text = "Line 1";
             this.lbl_Line.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // picture
+            // picLine
             // 
-            this.picture.Location = new System.Drawing.Point(323, 81);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(116, 131);
-            this.picture.TabIndex = 60;
-            this.picture.TabStop = false;
+            this.picLine.Location = new System.Drawing.Point(323, 81);
+            this.picLine.Name = "picLine";
+            this.picLine.Size = new System.Drawing.Size(116, 131);
+            this.picLine.TabIndex = 60;
+            this.picLine.TabStop = false;
             // 
-            // lb_Name
+            // lblLine
             // 
-            this.lb_Name.BackColor = System.Drawing.Color.Black;
-            this.lb_Name.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
-            this.lb_Name.ForeColor = System.Drawing.Color.Yellow;
-            this.lb_Name.Location = new System.Drawing.Point(303, 222);
-            this.lb_Name.Name = "lb_Name";
-            this.lb_Name.Size = new System.Drawing.Size(158, 35);
-            this.lb_Name.TabIndex = 62;
-            this.lb_Name.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLine.BackColor = System.Drawing.Color.Black;
+            this.lblLine.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold);
+            this.lblLine.ForeColor = System.Drawing.Color.Yellow;
+            this.lblLine.Location = new System.Drawing.Point(303, 222);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(158, 35);
+            this.lblLine.TabIndex = 62;
+            this.lblLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // grpProd
             // 
@@ -912,8 +912,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.Controls.Add(this.lb_Name);
-            this.Controls.Add(this.picture);
+            this.Controls.Add(this.lblLine);
+            this.Controls.Add(this.picLine);
             this.Controls.Add(this.grpProd);
             this.Controls.Add(this.lbl_Line);
             this.Controls.Add(this.gaugeControl2);
@@ -931,7 +931,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgModel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).EndInit();
             this.grpProd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axfpSpread1)).EndInit();
             this.ResumeLayout(false);
@@ -974,8 +974,8 @@
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent2;
         private System.Windows.Forms.Label lbl_Line;
         private GroupBoxEx grpProd;
-        private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Label lb_Name;
+        private System.Windows.Forms.PictureBox picLine;
+        private System.Windows.Forms.Label lblLine;
         private AxFPUSpreadADO.AxfpSpread axfpSpread1;
         private System.Windows.Forms.PictureBox pictureBox1;
 

@@ -443,9 +443,11 @@ namespace FORM
                             MENU_WS.OnMenuClick += MenuOnClick;
                             MENU_WS.MoveLeave += MoveLeaveClick;
                             MENU_WS.Dock = DockStyle.Fill;
-                            MENU_WS.GetImage(dt, i);
+                            
+                           // MENU_WS.GetImage(dt, i);
                         }
                     }
+                    loadLinePicture("F1");
                 }
                 else
                 {
@@ -516,9 +518,10 @@ namespace FORM
                             MENU_WS.OnMenuClick += MenuOnClick;
                             MENU_WS.MoveLeave += MoveLeaveClick;
                             MENU_WS.Dock = DockStyle.Fill;
-                            MENU_WS.GetImage(dt, i);
+                          //  MENU_WS.GetImage(dt, i);
                         }
                     }
+                    loadLinePicture("099");
                 }
                 else
                 {
@@ -539,6 +542,7 @@ namespace FORM
             
         }
         #endregion Button Nos N
+      
         #region Read File XML
         private DataTable ReadXML(string file)
         {
@@ -598,6 +602,84 @@ namespace FORM
                 btnLang.Visible = true;
                 btnBack.Visible = false;
             }
+        }
+
+        /// <summary>
+        /// Load picture PIC of Line
+        /// </summary>
+        /// 
+        public DataTable SEL_IMG(string argType)
+        {
+            COM.OraDB MyOraDB = new COM.OraDB();
+            DataSet ds_ret;
+
+            try
+            {
+                string process_name = "SEPHIROTH.PROC_STB_GET_IMG";
+
+                MyOraDB.ReDim_Parameter(4);
+                MyOraDB.Process_Name = process_name;
+
+                MyOraDB.Parameter_Name[0] = "ARG_CLASS_NM";
+                MyOraDB.Parameter_Name[1] = "ARG_LINE";
+                MyOraDB.Parameter_Name[2] = "ARG_MLINE";
+                MyOraDB.Parameter_Name[3] = "OUT_CURSOR";
+
+                MyOraDB.Parameter_Type[0] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[1] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[2] = (int)OracleType.VarChar;
+                MyOraDB.Parameter_Type[3] = (int)OracleType.Cursor;
+
+                MyOraDB.Parameter_Values[0] = this.GetType().Name;
+                MyOraDB.Parameter_Values[1] = argType;
+                MyOraDB.Parameter_Values[2] = "";
+                MyOraDB.Parameter_Values[3] = "";
+
+
+                MyOraDB.Add_Select_Parameter(true);
+                ds_ret = MyOraDB.Exe_Select_Procedure();
+
+                if (ds_ret == null) return null;
+                return ds_ret.Tables[process_name];
+            }
+            catch (Exception ex)
+            {
+                ComVar.Var.writeToLog(this.GetType().Name + "-->DB-->SEL_MODEL_NAME -->Err: " + ex.ToString());
+                return null;
+            }
+        }
+
+        private void loadLinePicture(string argType)
+        {
+            try
+            {
+                DataTable dt = SEL_IMG(argType);
+                if (dt == null || dt.Rows.Count == 0) return;
+                Control cnt = null;
+                string strConName = "";
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    try
+                    {
+                        strConName = dt.Rows[i]["CNTR_NAME"].ToString();
+                        cnt = this.Controls.Find(strConName, true).FirstOrDefault();
+                        cnt.BackgroundImage = (Bitmap)((new ImageConverter()).ConvertFrom((byte[])dt.Rows[i]["IMG"]));
+                        cnt.BackgroundImageLayout = ImageLayout.Stretch;
+
+                        cnt = this.Controls.Find(strConName.Replace("pic", "lbl"), true).FirstOrDefault();
+                        cnt.Text = dt.Rows[i]["NAME"].ToString();
+                    }
+                    catch (Exception ex)
+                    {
+                        ComVar.Var.writeToLog(this.GetType().Name + "-->loadLinePicture" + strConName + "-->Err: " + ex.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ComVar.Var.writeToLog(this.GetType().Name + "-->loadLinePicture-->Err: " + ex.ToString());
+            }
+
         }
 
 

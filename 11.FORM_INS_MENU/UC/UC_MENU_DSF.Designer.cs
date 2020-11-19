@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_MENU_DSF));
             this.bsView = new DevExpress.XtraBars.Ribbon.BackstageViewControl();
             this.backstageViewClientControl1 = new DevExpress.XtraBars.Ribbon.BackstageViewClientControl();
@@ -58,13 +59,13 @@
             this.bsVHumanResource = new DevExpress.XtraBars.Ribbon.BackstageViewTabItem();
             this.cmdQP = new DevExpress.XtraEditors.SimpleButton();
             this.gauC = new DevExpress.XtraGauges.Win.GaugeControl();
+            this.dgModel = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.digitalBackgroundLayerComponent2 = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent();
             this.lbl_Line = new System.Windows.Forms.Label();
-            this.picture = new System.Windows.Forms.PictureBox();
-            this.lblMLine1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.picLine = new System.Windows.Forms.PictureBox();
+            this.lblLine = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.grpProd = new FORM.GroupBoxEx();
-            this.dgModel = new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge();
             this.axfpSpread1 = new AxFPSpreadADO.AxfpSpread();
             ((System.ComponentModel.ISupportInitialize)(this.bsView)).BeginInit();
             this.bsView.SuspendLayout();
@@ -73,9 +74,10 @@
             this.backstageViewClientControl3.SuspendLayout();
             this.backstageViewClientControl4.SuspendLayout();
             this.backstageViewClientControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgModel)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).BeginInit();
+            this.grpProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.axfpSpread1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -809,6 +811,18 @@
             this.gauC.TabIndex = 57;
             this.gauC.Click += new System.EventHandler(this.gauC_Click);
             // 
+            // dgModel
+            // 
+            this.dgModel.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:Black");
+            this.dgModel.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:Yellow");
+            this.dgModel.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
+            this.digitalBackgroundLayerComponent2});
+            this.dgModel.Bounds = new System.Drawing.Rectangle(6, 6, 587, 58);
+            this.dgModel.DigitCount = 20;
+            this.dgModel.Name = "dgModel";
+            this.dgModel.Padding = new DevExpress.XtraGauges.Core.Base.TextSpacing(26, 20, 26, 20);
+            this.dgModel.Text = "";
+            // 
             // digitalBackgroundLayerComponent2
             // 
             this.digitalBackgroundLayerComponent2.BottomRight = new DevExpress.XtraGauges.Core.Base.PointF2D(985.2502F, 99.9625F);
@@ -829,25 +843,25 @@
             this.lbl_Line.Text = "Line 1";
             this.lbl_Line.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // picture
+            // picLine
             // 
-            this.picture.Location = new System.Drawing.Point(447, 70);
-            this.picture.Name = "picture";
-            this.picture.Size = new System.Drawing.Size(116, 131);
-            this.picture.TabIndex = 60;
-            this.picture.TabStop = false;
+            this.picLine.Location = new System.Drawing.Point(447, 70);
+            this.picLine.Name = "picLine";
+            this.picLine.Size = new System.Drawing.Size(116, 131);
+            this.picLine.TabIndex = 60;
+            this.picLine.TabStop = false;
             // 
-            // lblMLine1
+            // lblLine
             // 
-            this.lblMLine1.BackColor = System.Drawing.Color.Black;
-            this.lblMLine1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMLine1.ForeColor = System.Drawing.Color.Yellow;
-            this.lblMLine1.Location = new System.Drawing.Point(409, 204);
-            this.lblMLine1.Name = "lblMLine1";
-            this.lblMLine1.Size = new System.Drawing.Size(210, 35);
-            this.lblMLine1.TabIndex = 61;
-            this.lblMLine1.Text = "name";
-            this.lblMLine1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblLine.BackColor = System.Drawing.Color.Black;
+            this.lblLine.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLine.ForeColor = System.Drawing.Color.Yellow;
+            this.lblLine.Location = new System.Drawing.Point(409, 204);
+            this.lblLine.Name = "lblLine";
+            this.lblLine.Size = new System.Drawing.Size(210, 35);
+            this.lblLine.TabIndex = 61;
+            this.lblLine.Text = "name";
+            this.lblLine.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
             // 
@@ -875,18 +889,6 @@
             this.grpProd.TextBorderColor = System.Drawing.Color.Black;
             this.grpProd.TextBorderWith = 1F;
             // 
-            // dgModel
-            // 
-            this.dgModel.AppearanceOff.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:Black");
-            this.dgModel.AppearanceOn.ContentBrush = new DevExpress.XtraGauges.Core.Drawing.SolidBrushObject("Color:Yellow");
-            this.dgModel.BackgroundLayers.AddRange(new DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent[] {
-            this.digitalBackgroundLayerComponent2});
-            this.dgModel.Bounds = new System.Drawing.Rectangle(6, 6, 587, 58);
-            this.dgModel.DigitCount = 20;
-            this.dgModel.Name = "dgModel";
-            this.dgModel.Padding = new DevExpress.XtraGauges.Core.Base.TextSpacing(26, 20, 26, 20);
-            this.dgModel.Text = "";
-            // 
             // axfpSpread1
             // 
             this.axfpSpread1.DataSource = null;
@@ -900,8 +902,8 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.Controls.Add(this.lblMLine1);
-            this.Controls.Add(this.picture);
+            this.Controls.Add(this.lblLine);
+            this.Controls.Add(this.picLine);
             this.Controls.Add(this.lbl_Line);
             this.Controls.Add(this.gauC);
             this.Controls.Add(this.bsView);
@@ -916,9 +918,10 @@
             this.backstageViewClientControl3.ResumeLayout(false);
             this.backstageViewClientControl4.ResumeLayout(false);
             this.backstageViewClientControl5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgModel)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.digitalBackgroundLayerComponent2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picLine)).EndInit();
+            this.grpProd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.axfpSpread1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -960,8 +963,8 @@
         private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent2;
         private System.Windows.Forms.Label lbl_Line;
         private GroupBoxEx grpProd;
-        private System.Windows.Forms.PictureBox picture;
-        private System.Windows.Forms.Label lblMLine1;
+        private System.Windows.Forms.PictureBox picLine;
+        private System.Windows.Forms.Label lblLine;
         private System.Windows.Forms.Timer timer1;
         private AxFPSpreadADO.AxfpSpread axfpSpread1;
 
